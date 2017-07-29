@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Countries</h2>
+
+<div class="container" ng-app="angApp">
+    <div class="row">
+        <div class="span10" ng-controller="countryController">
+            <table id="countries" class="table table-condensed table-hover" ng-hide="showMe">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Country</th>
+                        <th>Capital</th>
+                        <th>Area</th>
+                        <th>Population</th>
+                        <th>GDP</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="country in countries">
+                        <td><button ng-click="getCountryDetails(country.id)">{{country.id}}</button></td>
+                        <td>{{country.name}}</td>
+                        <td>{{country.capital}}</td>
+                        <td>{{country.area | number}}</td>
+                        <td>{{country.population | number}}</td>
+                        <td>{{country.gdp | currency}}</td>
+                        <td>{{country.description}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table id="country" class="table table-condensed" ng-hide="!showMe">
+                <tr>
+                    <td>Country</td>
+                    <td>{{nation.name}}</td>
+                    <td>Capital</td>
+                    <td>{{nation.capital}}</td>
+                    <td>Area</td>
+                    <td>{{nation.area | number}}</td>
+                    <td>Population</td>
+                    <td>{{nation.population | number}}</td>
+                    <td>GDP</td>
+                    <td>{{nation.gdp | currency}}</td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td colspan="9">{{nation.description}}</td>
+                </tr>
+                <tr>
+                    <td>Flag</td>
+                    <td colspan="2"><img src="~/img/img_flag_{{nation.id}}.jpg" /></td>
+                    <td></td>
+                    <td>Map</td>
+                    <td colspan="2"><img src="~/img/img_map_{{nation.id}}.jpg" /></td>
+                </tr>
+                <tr>
+                    <td colspan="10"><button ng-click="goBack()">Go back</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
