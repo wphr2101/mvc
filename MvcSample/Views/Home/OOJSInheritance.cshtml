@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "OOJSInheritance";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    div.main {
+        color: fuchsia;
+    }
+</style>
+<script type="text/javascript" src="~/Scripts/app2.js"></script>
+
+<div class="main">
+    <h2>OOJS Inheritance</h2>
+    <p>Please check the result in the console by clicking F12 and click on console!</p>
+    <p>
+        class Vehicle {
+
+        }
+    </p>
+    <p>
+        class Drone extends Vehicle {
+
+        }
+    </p>
+    <p>
+        class Car extends Vehicle {
+
+        }
+    </p>
+    <p>
+        let c = new Car();
+        console.log('c is an instance of Car: ' + (c instanceof Car));
+    </p>
+</div>
+

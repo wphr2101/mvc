@@ -21,7 +21,6 @@ c:\users\richard\documents\visual studio 2015\Projects\MvcSample\MvcSample\bin\S
 c:\users\richard\documents\visual studio 2015\Projects\MvcSample\MvcSample\bin\System.Web.WebPages.Razor.xml
 c:\users\richard\documents\visual studio 2015\Projects\MvcSample\MvcSample\bin\Antlr3.Runtime.pdb
 c:\users\richard\documents\visual studio 2015\Projects\MvcSample\MvcSample\bin\Newtonsoft.Json.xml
-c:\users\richard\documents\visual studio 2015\Projects\MvcSample\MvcSample\obj\Debug\MvcSample.csprojResolveAssemblyReference.cache
 c:\users\richard\documents\visual studio 2015\Projects\MvcSample\MvcSample\obj\Debug\MvcSample.dll
 c:\users\richard\documents\visual studio 2015\Projects\MvcSample\MvcSample\obj\Debug\MvcSample.pdb
 c:\users\richard\documents\visual studio 2015\Projects\MvcSample\MvcSample\bin\System.Net.Http.Formatting.dll
@@ -30,3 +29,4 @@ c:\users\richard\documents\visual studio 2015\Projects\MvcSample\MvcSample\bin\S
 c:\users\richard\documents\visual studio 2015\Projects\MvcSample\MvcSample\bin\System.Net.Http.Formatting.xml
 c:\users\richard\documents\visual studio 2015\Projects\MvcSample\MvcSample\bin\System.Web.Http.xml
 c:\users\richard\documents\visual studio 2015\Projects\MvcSample\MvcSample\bin\System.Web.Http.WebHost.xml
+C:\Users\richard\Documents\Visual Studio 2015\Projects\MvcSample\MvcSample\obj\Debug\MvcSample.csprojResolveAssemblyReference.cache

@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "OOJS";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    div.main {
+        color: cornsilk;
+    }
+</style>
+<script type="text/javascript" src="~/Scripts/app.js"></script>
+
+<div class="main">
+    <h2>OOJS - Basics</h2>
+    <div class="container" ng-app>
+        <p>Hello, OOJS!</p>
+        <p>Please check the result in the console by clicking F12 and click on console!</p>
+        <p>class Drone {</p>
+        <p>constructor(id, name) { this.id = id; this.name = name; }</p>
+        <p>static getCompany() { console.log('in getCompany.'); }</p>
+        <p>get() { return this._id; }</p>
+        <p>set(value) { this._id = value; }</p>
+        <p>fly() { console.log('Drone ' + this.id + ' is flying!'); }</p>
+        <p>}</p>
+        <p>Drone.maxHeight = 2000;</p>
+        <p>let drone = new Drone('A123','Flyer');</p>
+        <p>let drone2 = new Drone('B456','Twirl');</p>
+        <p>console.log("The Drone is a type of " + typeof Drone);</p>
+        <p>console.log(drone instanceof Drone);</p>
+        <p>console.log('drone: ' + drone['id'] + ' ' + drone['name']);</p>
+        <p>console.log('drone: ' + drone2.id + ' ' + drone2.name);</p>
+        <p>console.log('Drone.maxHeight = ' + Drone.maxHeight);</p>
+        <p>console.log('drone.maxHeight = ' + drone.maxHeight);</p>
+        <p>drone.fly();</p>
+        <p>drone2.fly();</p>
+        <p>Drone.getCompany();</p>
+        <p>console.log('drone ID = ' + drone.id);</p>
+        <p>drone.id = 'A938';</p>
+        <p>console.log('drone ID = ' + drone.id);</p>
+        <p>console.log('drone2 ID = ' + drone2.id);</p>
+    </div>
+</div>

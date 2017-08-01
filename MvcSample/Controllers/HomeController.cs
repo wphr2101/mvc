@@ -13,6 +13,16 @@ namespace MvcSample.Controllers
             return View();
         }
 
+        public ActionResult OOJS()
+        {
+            return View();
+        }
+
+        public ActionResult OOJSInheritance()
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

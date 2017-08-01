@@ -5,14 +5,26 @@
 }
 
 <style type="text/css">
-    div.container 
+    div.main 
     {
         color:aqua;
     }
 </style>
+<div class="main" ng-app="myApp">
+    <h2>Hello Angular</h2>
 
-<h2>Hello Angular</h2>
-
-<div class="container" ng-app>
-    <p>Hello, Angular! {{1 + 1}} @Model!</p>
+    <div class="container" ng-app>
+        <p>Hello, Angular! {{1 + 1}} @Model!</p>
+        <p>The following program is tester for dependency injectors:</p>
+        <div ng-controller="controllerA">
+            <h4>Application Message:</h4>
+            {{message}}
+        </div><br />
+        <div ng-controller="controllerB">
+            <h4>Module Message:</h4>
+            {{message}}
+        </div>
+    </div>
 </div>
+<script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
+<script src="~/Scripts/injector.js"></script>
