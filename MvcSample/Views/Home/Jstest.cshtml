@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Jstest";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    h2, .main {
+        color: lawngreen
+    }
+</style>
+<script type="text/javascript">
+    var bar = 1 + 2 + 3 + "4";
+    var bar2 = "1" + 2 + 3 + "4";
+    var arr = [1, 2, 3, 4, 7, 8, 3, 2];
+
+    var globalVar = "abc"; 
+
+    // Parent self invoking function 
+    (function outerFunction (outerArg) { // begin of scope outerFunction
+        // Variable declared in outerFunction function scope 
+        var outerFuncVar = 'x';    
+        // Closure self-invoking function 
+        (function innerFunction(innerArg) { // begin of scope innerFunction
+            // variable declared in innerFunction function scope
+            var innerFuncVar = "y";
+            console.log(
+                "outerArg = " + outerArg + "\n" +
+                "outerFuncVar = " + outerFuncVar + "\n" +
+                "innerArg = " + innerArg + "\n" +
+                "innerFuncVar = " + innerFuncVar + "\n" +
+                "globalVar = " + globalVar);
+
+        })();// end of scope innerFunction)(5); // Pass 5 as parameter
+    })();// end of scope outerFunction )(7); // Pass 7 as parameter 
+</script>
+<h2>JavaScript Test</h2>
+
+<div class="main">
+    var bar = 1 + 2 + 3 + "4";<br />Result:
+    <script>document.write(bar);</script><br />
+    var bar2 = "1" + 2 + 3 + "4";<br />Result:
+    <script>document.write(bar2);</script>
+    var arr = [1,2,3,4,7,8,3,2];<br />
+    arr.indexOf(2):<br />Result: 
+    <script>document.write(arr.indexOf(2));</script><br />
+    arr.lastIndexOf(2):<br />Result: 
+    <script>document.write(arr.lastIndexOf(2));</script><br />
+    arr.join():<br />Result: 
+    <script>document.write(arr.join());</script><br />
+    arr.slice(0,2):<br />Result: 
+    <script>document.write(arr.slice(0, 2));</script><br />
+    arr.slice(4,7):<br />Result: 
+    <script>document.write(arr.slice(4, 7));</script>
+    arr.slice(5,92):<br />Result:
+    <script>document.write(arr.slice(5, 92));</script>
+</div>

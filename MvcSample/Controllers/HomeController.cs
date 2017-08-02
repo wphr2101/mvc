@@ -13,6 +13,11 @@ namespace MvcSample.Controllers
             return View();
         }
 
+        public ActionResult Jstest()
+        {
+            return View();
+        }
+
         public ActionResult OOJS()
         {
             return View();

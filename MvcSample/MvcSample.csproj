@@ -228,6 +228,7 @@
     <Content Include="Views\Country\Index.cshtml" />
     <Content Include="Views\Home\OOJS.cshtml" />
     <Content Include="Views\Home\OOJSInheritance.cshtml" />
+    <Content Include="Views\Home\Jstest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

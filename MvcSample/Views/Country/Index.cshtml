@@ -8,11 +8,15 @@
     h2 {
         color: aqua;
     }
+    img {
+        border: solid 2px #fff;
+    }
 </style>
 
 <h2>Countries</h2>
 
 <div class="container" ng-app="angApp">
+    <p ng-show="showError">{{error}}</p>
     <div class="row">
         <div class="span10" ng-controller="countryController">
             <table id="countries" class="table table-condensed table-hover" ng-hide="showMe">
@@ -24,7 +28,7 @@
                         <th>Area</th>
                         <th>Population</th>
                         <th>GDP</th>
-                        <th>Description</th>
+                        @*<th>Description</th>*@
                     </tr>
                 </thead>
                 <tbody>
@@ -35,7 +39,7 @@
                         <td>{{country.area | number}}</td>
                         <td>{{country.population | number}}</td>
                         <td>{{country.gdp | currency}}</td>
-                        <td>{{country.description}}</td>
+                        @*<td>{{country.description}}</td>*@
                     </tr>
                 </tbody>
             </table>
