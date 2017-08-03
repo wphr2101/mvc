@@ -2,7 +2,6 @@
 using MvcSample.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using System.Web.Script.Serialization;
 
 namespace MvcSample.Controllers
 {
@@ -11,7 +10,6 @@ namespace MvcSample.Controllers
         // GET: Country
         public ActionResult Index()
         {
-            //return View("Index", "", SerializedCountryData());
             return View("Index");
         }
 
@@ -30,26 +28,27 @@ namespace MvcSample.Controllers
                     new Country {id = 8, name = "Italy", capital = "Rome", description ="Italy, Italian: Italia, officially the Italian Republic, is a unitary parliamentary republic in Europe. Located in the heart of the Mediterranean Sea, Italy shares open land borders with France, Switzerland, Austria, Slovenia, San Marino and Vatican City. Italy covers an area of 301,338 km2 and has a largely temperate seasonal and Mediterranean climate. Due to its shape, it is often referred to in Italy as lo Stivale (the Boot). With 61 million inhabitants it is the fourth most populous EU member state.", area = 301338, population = 60599936, gdp = 36833},
                     new Country {id = 9, name = "Spain", capital = "Madrid", description ="Spain, Spanish: España, officially the Kingdom of Spain (Spanish: Reino de España), is a sovereign state located on the Iberian Peninsula in southwestern Europe, with two large archipelagoes, the Balearic Islands in the Mediterranean Sea and the Canary Islands off the North African Atlantic coast, two cities, Ceuta and Melilla, in the North African mainland and several small islands in the Alboran Sea near the Moroccan coast. The country's mainland is bordered to the south and east by the Mediterranean Sea except for a small land boundary with Gibraltar; to the north and northeast by France, Andorra, and the Bay of Biscay; and to the west and northwest by Portugal and the Atlantic Ocean. It is the only European country to have a border with an African country Morocco and its African territory accounts for nearly 5% of its population, mostly in the Canary Islands but also in Ceuta and Melilla.", area = 505990, population = 46468102, gdp =38239},
                     new Country {id = 10, name = "Japan", capital = "Tokyo", description ="Japan, Japanese: 日本 Nippon or Nihon, is a sovereign island nation in East Asia. Located in the Pacific Ocean, it lies off the eastern coast of the Asian mainland, and stretches from the Sea of Okhotsk in the north to the East China Sea and Taiwan in the southwest. The kanji that make up Japan's name mean 'sun origin'. Japan is often referred to by the famous epithet 'Land of the Rising Sun' in reference to its Japanese name.", area = 377972, population = 126740000, gdp = 42860}
+                    //Russia
+                    //China
+                    //India
+                    //Brazil
+                    //Mexico
+                    //Korea
+                    //Taiwan
+                    //Hong Kong
+                    //Singapore
+                    //Israel
+                    //Malaysia
+                    //Indonesia
+                    //Thailand
+                    //Dubai
+                    //South Africa
+                    //Saudi Arabia
+                    //UAE
+                    //Argentina
                 };
             var settings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             return JsonConvert.SerializeObject(countries, Formatting.None, settings);
         }
-
-        //[HttpGet]
-        //public string getCountryDetail(int id)
-        //{
-        //    JavaScriptSerializer js = new JavaScriptSerializer();
-        //    Country[] country = js.Deserialize<Country[]>(SerializedCountryData());
-        //    var settings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
-        //    try
-        //    {
-        //        return JsonConvert.SerializeObject(country[id - 1], Formatting.None, settings);
-        //    }
-        //    catch
-        //    {
-        //        var error = "{ 'error':'No information is found!'}";
-        //        return JsonConvert.SerializeObject(error, Formatting.None, settings);
-        //    }
-        //}
     }
 }
