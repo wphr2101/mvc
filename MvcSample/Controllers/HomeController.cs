@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections;
+using System.Web.Mvc;
 
 namespace MvcSample.Controllers
 {
@@ -36,6 +37,16 @@ namespace MvcSample.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public double sumArrayList(ArrayList arr)
+        {
+            double sum = 0.0;
+            foreach(double a in arr)
+            {
+
+            }
+            return sum;
         }
     }
 }
