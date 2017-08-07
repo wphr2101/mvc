@@ -25,12 +25,7 @@ textarea {
 }
 
 #countries,
-#country
+#country h4
 {
     color: aliceblue;
-}
-
-#country td{
-    color:aliceblue;
-    width: 10%;
 }

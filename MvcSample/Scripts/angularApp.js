@@ -1,4 +1,24 @@
-﻿angular.module('angApp', []).controller('countryController', ['$scope', '$http', function ($scope, $http) {
+﻿var angApp = angular.module('angApp', []);
+
+angApp.directive('myDesc', function () {
+    return {
+        transclude: true,
+        restrict: 'E',
+        scope: { title: '@' },
+        template: '<div>{{title}}<div ng-transclude></div></div>'
+    };
+});
+
+angApp.directive('myImg', function () {
+    return {
+        transclude: true,
+        restrict: 'E',
+        scope: { title: '@', iheight: '@iheight' },
+        template: '<div><span class="titleBar">{{title}}</span><div ng-transclude></div></div>'
+    };
+});
+
+angApp.controller('countryController', ['$scope', '$http', function ($scope, $http) {
     $scope.countries = "";
 
     $scope.loadCountries = function () {
@@ -24,3 +44,4 @@
         $scope.showMe = !$scope.showMe;
     }
 }]);
+

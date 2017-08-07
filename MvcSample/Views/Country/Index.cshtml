@@ -12,6 +12,9 @@
     img {
         border: solid 2px #fff;
     }
+    .titleBar{
+        color: #fff; background-color: #0026ff; font:bold 14px arial; display:block; height:200px;
+    }
 </style>
 
 <h2>Countries</h2>
@@ -42,34 +45,15 @@
                     </tr>
                 </tbody>
             </table>
-            <table id="country" class="table table-condensed" ng-hide="!showMe">
-                <tr>
-                    <td>Country</td>
-                    <td>{{nation.name}}</td>
-                    <td>Capital</td>
-                    <td>{{nation.capital}}</td>
-                    <td>Area</td>
-                    <td>{{nation.area | number}}</td>
-                    <td>Population</td>
-                    <td>{{nation.population | number}}</td>
-                    <td>GDP</td>
-                    <td>{{nation.gdp | currency}}</td>
-                </tr>
-                <tr>
-                    <td>Description</td>
-                    <td colspan="9">{{nation.description}}</td>
-                </tr>
-                <tr>
-                    <td>Flag</td>
-                    <td colspan="2"><img src="~/img/img_flag_{{nation.id}}.jpg" /></td>
-                    <td></td>
-                    <td>Map</td>
-                    <td colspan="2"><img src="~/img/img_map_{{nation.id}}.jpg" /></td>
-                </tr>
-                <tr>
-                    <td colspan="10"><button ng-click="goBack()">Go back</button></td>
-                </tr>
-            </table>
+            <myImg id="country" ng-hide="!showMe">
+                <h4>Flag and Map</h4>
+                <myDesc title="{{nation.name}} Description">{{nation.description}}</myDesc>
+                <myImg title="{{nation.name}} Flag" iheight="200px"><img src="~/img/img_flag_{{nation.id}}.jpg" /></myImg>
+                <myImg title="{{nation.name}} Map" iheight="200px"><img src="~/img/img_map_{{nation.id}}.jpg" /></myImg>
+                <div>
+                    <div><button ng-click="goBack()">Go back</button></div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
