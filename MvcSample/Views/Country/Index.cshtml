@@ -3,7 +3,8 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@*<link rel="stylesheet" ; href="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.css">
+<script src="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.js"></script>*@
 <style type="text/css">
     h2 {
         color: aqua;
@@ -19,7 +20,7 @@
     <p ng-show="showError">{{error}}</p>
     <div class="row">
         <div class="span10" ng-controller="countryController">
-            <table id="countries" class="table table-condensed table-hover" ng-hide="showMe">
+            <table id="countries" class="table table-condensed table-hover" ng-hide="showMe" @*ng-table="vm.tableParams" show-filter="true"*@>
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -28,7 +29,6 @@
                         <th>Area</th>
                         <th>Population</th>
                         <th>GDP</th>
-                        @*<th>Description</th>*@
                     </tr>
                 </thead>
                 <tbody>
@@ -39,7 +39,6 @@
                         <td>{{country.area | number}}</td>
                         <td>{{country.population | number}}</td>
                         <td>{{country.gdp | currency}}</td>
-                        @*<td>{{country.description}}</td>*@
                     </tr>
                 </tbody>
             </table>
