@@ -230,6 +230,7 @@
     <Content Include="Views\Home\OOJS.cshtml" />
     <Content Include="Views\Home\OOJSInheritance.cshtml" />
     <Content Include="Views\Home\Jstest.cshtml" />
+    <Content Include="Views\Hello\ReactJS.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

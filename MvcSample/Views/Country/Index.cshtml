@@ -3,8 +3,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@*<link rel="stylesheet" ; href="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.css">
-<script src="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.js"></script>*@
+
 <style type="text/css">
     h2 {
         color: aqua;
@@ -12,9 +11,12 @@
     img {
         border: solid 2px #fff;
     }
-    .titleBar{
-        color: #fff; background-color: #0026ff; font:bold 14px arial; display:block; height:200px;
+    .titleBar {
+        color: #fff; background-color: darkcyan; font:bold 14px arial; display:block; height:20px; text-align:center;
     }
+    .mybox {
+        width: unset;
+    } 
 </style>
 
 <h2>Countries</h2>
@@ -23,33 +25,45 @@
     <p ng-show="showError">{{error}}</p>
     <div class="row">
         <div class="span10" ng-controller="countryController">
-            <table id="countries" class="table table-condensed table-hover" ng-hide="showMe" @*ng-table="vm.tableParams" show-filter="true"*@>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Country</th>
-                        <th>Capital</th>
-                        <th>Area</th>
-                        <th>Population</th>
-                        <th>GDP</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="country in countries">
-                        <td><button ng-click="getCountryDetails(country.id)">{{country.id}}</button></td>
-                        <td>{{country.name}}</td>
-                        <td>{{country.capital}}</td>
-                        <td>{{country.area | number}}</td>
-                        <td>{{country.population | number}}</td>
-                        <td>{{country.gdp | currency}}</td>
-                    </tr>
-                </tbody>
-            </table>
-            <myImg id="country" ng-hide="!showMe">
-                <h4>Flag and Map</h4>
-                <myDesc title="{{nation.name}} Description">{{nation.description}}</myDesc>
-                <myImg title="{{nation.name}} Flag" iheight="200px"><img src="~/img/img_flag_{{nation.id}}.jpg" /></myImg>
-                <myImg title="{{nation.name}} Map" iheight="200px"><img src="~/img/img_map_{{nation.id}}.jpg" /></myImg>
+            <div ng-hide="showMe">
+                <div class="pagination">
+                    <button ng-disabled="currentPage == 0" ng-click="currentPage = currentPage - 1">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </button>
+                    <span>{{currentPage + 1}}/{{numberOfPages}}</span>
+                    <button ng-disabled="currentPage >= countries.length / pageSize - 1" ng-click="currentPage = currentPage + 1">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </button>
+                </div>
+                <table id="countries" class="table table-condensed table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Country</th>
+                            <th>Capital</th>
+                            <th>Area</th>
+                            <th>Population</th>
+                            <th>GDP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="country in countries | firstPage: currentPage * pageSize | limitTo: pageSize">
+                            <td><button ng-click="getCountryDetails(country.id)">{{country.id}}</button></td>
+                            <td>{{country.name}}</td>
+                            <td>{{country.capital}}</td>
+                            <td>{{country.area | number}}</td>
+                            <td>{{country.population | number}}</td>
+                            <td>{{country.gdp | currency}}</td>
+                        </tr>
+                    </tbody>                        
+                </table>                
+            </div>            
+            <div id="country" ng-hide="!showMe">
+                <div>
+                    <h4>{{nation.name}} Description</h4><p>{{nation.description}}</p>
+                    <figure style="display:inline-block"><img src="~/img/img_flag_{{nation.id}}.jpg" /><figcaption>{{nation.name}} Flag</figcaption></figure>
+                    <figure style="display:inline-block"><img src="~/img/img_map_{{nation.id}}.jpg" /><figcaption>{{nation.name}} Map</figcaption></figure>
+                </div>
                 <div>
                     <div><button ng-click="goBack()">Go back</button></div>
                 </div>

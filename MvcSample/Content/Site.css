@@ -25,7 +25,28 @@ textarea {
 }
 
 #countries,
-#country h4
+#country
 {
     color: aliceblue;
+}
+
+.pagination span
+{
+    display: inline-block;
+    margin: 0 10px;
+    vertical-align: middle;
+    color: aqua;
+}
+
+.pagination button:disabled 
+{
+    background-color: #ddd;
+    color: azure;
+    cursor: default;
+}
+
+.pagination button 
+{
+    background-color: #808080;
+    cursor: default;
 }
