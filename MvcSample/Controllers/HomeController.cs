@@ -25,6 +25,11 @@ namespace MvcSample.Controllers
             return View();
         }
 
+        public ActionResult ES6()
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

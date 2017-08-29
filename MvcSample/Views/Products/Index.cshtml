@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout_Prod.cshtml";
+}
+
+<h2>Index</h2>
+
+<div ng-controller="prodCntrl">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <h1> Employee Details Page</h1>
+
+    <br />
+
+    <input type="button" class="btnAdd" value="Add Product" ng-click="AddProductDiv()" />
+
+    <div class="divList">
+        <p class="divHead">Product List</p>
+        <table cellpadding="12" class="table table-bordered table-hover">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Edit / Delete</th>
+            </tr>
+            <tr ng-repeat="product in products">
+                <td>
+                    {{product.Id}}
+                </td>
+                <td>
+                    {{product.Name}}
+                </td>
+                <td>
+                    {{product.Price}}
+                </td>
+                <td>
+                    {{product.Quantity}}
+                </td>
+                <td>
+                    <span ng-click="editProduct(product)" class="btnAdd">Edit</span>
+                    <span ng-click="deleteProduct(product)" class="btnRed">Delete</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div ng-show="divProduct">
+        <p class="divHead">{{Action}} Product</p>
+        <table>
+            <tr>
+                <td><b>Id</b></td>
+                <td>
+                    <input type="text" disabled="disabled" ng-model="productId" />
+                </td>
+            </tr>
+            <tr>
+                <td><b>Name</b></td>
+                <td>
+                    <input type="text" ng-model="productName" id="productName" required />
+                </td>
+            </tr>
+            <tr>
+                <td><b>Price</b></td>
+                <td>
+                    <input type="text" ng-model="productPrice" id="productPrice" required />
+                </td>
+            </tr>
+            <tr>
+                <td><b>Quantity</b></td>
+                <td>
+                    <input type="text" ng-model="productQuantity" id="productQuantity" required />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" class="btnAdd" value="Save" ng-click="AddUpdateProduct()" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

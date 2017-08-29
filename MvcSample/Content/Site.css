@@ -50,3 +50,7 @@ textarea {
     background-color: #808080;
     cursor: default;
 }
+
+.invalid {
+    border-color: #FF0000;
+}
