@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    #content{
+        padding:50px;
+        color:aqua;
+    }
+    h1{
+        color:darksalmon;
+    }
+</style>
+
+<script src="~/Scripts/react/react.min.js"></script>
+
+<h1>ReactJS</h1>
+
+<div id="content"></div>
+
+<script src="@Url.Content("~/Scripts/jsx/HelloWorld.jsx")"></script>

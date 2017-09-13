@@ -69,7 +69,7 @@
     }
 
     $scope.deleteEmployee = function (employee) {
-        var getData = myService.DeleteEmp(employee.Id);
+        var getData = myService.DeleteEmp(employee);
         getData.then(function (msg) {
             GetAllEmployee();
             alert('Employee Deleted');

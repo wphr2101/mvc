@@ -46,13 +46,12 @@
     }
 
     //Delete Product
-    this.deleteProduct = function (prodID) {
+    this.deleteProduct = function (product) {
         var response = $http({
             method: "post",
             url: "Products/DeleteProduct",
-            params: {
-                prodId: JSON.stringify(prodID)
-            }
+            data: JSON.stringify(product),
+            dataType: "json"
         });
         return response;
     }

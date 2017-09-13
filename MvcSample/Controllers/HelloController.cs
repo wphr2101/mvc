@@ -29,10 +29,5 @@ namespace MvcSample.Controllers
             a += "]";
             return a;
         }
-
-        public ActionResult ReactJS()
-        {
-            return View("ReactJS");
-        }
     }
 }

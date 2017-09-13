@@ -69,7 +69,7 @@ namespace MvcSample.Controllers
                 {
                     dataContext.Employees.Add(Emp);
                     dataContext.SaveChanges();
-                    return "Employee Updated";
+                    return "Employee Added";
                 }
             }
             else

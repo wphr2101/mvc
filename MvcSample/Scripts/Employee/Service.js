@@ -41,13 +41,12 @@
     }
 
     //Delete Employee
-    this.DeleteEmp = function (employeeId) {
+    this.DeleteEmp = function (employee) {
         var response = $http({
             method: "post",
             url: "Employee/DeleteEmployee",
-            params: {
-                employeeId: JSON.stringify(employeeId)
-            }
+            data: JSON.stringify(employee),
+            dataType: "json"
         });
         return response;
     }

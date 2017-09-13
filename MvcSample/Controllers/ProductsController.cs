@@ -61,7 +61,7 @@ namespace MvcSample.Controllers
                 {
                     dataContext.Products.Add(Prod);
                     dataContext.SaveChanges();
-                    return "Product Updated";
+                    return "Product Added";
                 }
             }
             else

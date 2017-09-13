@@ -75,7 +75,6 @@ app.controller("prodCntrl", function ($scope, prodService) {
             }
             GetAllProducts();
             $scope.divProduct = false;
-            $state.reload();
         }
     }
 
@@ -86,13 +85,15 @@ app.controller("prodCntrl", function ($scope, prodService) {
     }
 
     $scope.deleteProduct = function (product) {
-        var getData = prodService.deleteProduct(product.Id);
+        console.log("Controller: " + product);
+        var getData = prodService.deleteProduct(product);
         getData.then(function (msg) {
             GetAllProducts();
             alert('Product Deleted');
         }, function () {
             alert('Error in Deleting Record');
         });
+        
     }
 
     function ClearFields() {

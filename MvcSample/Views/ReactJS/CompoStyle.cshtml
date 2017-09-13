@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "CompoStyle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    #content {
+        padding: 50px;
+        color: aqua;
+    }
+
+    h1 {
+        color: darksalmon;
+    }
+</style>
+
+<script src="~/Scripts/react/react.min.js"></script>
+
+<h1>Components and Stylings</h1>
+
+<div id="content"></div>
+
+<script src="@Url.Content("~/Scripts/jsx/ComponentsStylings.jsx")"></script>
