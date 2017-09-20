@@ -23,5 +23,10 @@ namespace MvcSample.Controllers
         {
             return View();
         }
+
+        public ActionResult State()
+        {
+            return View();
+        }
     }
 }

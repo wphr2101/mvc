@@ -228,6 +228,8 @@
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HelloController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KOController.cs" />
+    <Compile Include="Controllers\NodeJSController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ReactJSController.cs" />
     <Compile Include="Global.asax.cs">
@@ -306,7 +308,12 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\jsx\ComponentsStylings.jsx" />
+    <Content Include="Scripts\jsx\State.jsx" />
+    <Content Include="Scripts\knockout\Knockouts.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\nodejs\Dependency.js" />
+    <Content Include="Scripts\nodejs\SampleNode.js" />
+    <Content Include="Scripts\nodejs\Server.js" />
     <Content Include="Scripts\PagingApp.js" />
     <Content Include="Scripts\Product\ProdController.js" />
     <Content Include="Scripts\Product\ProdService.js" />
@@ -320,6 +327,7 @@
     <Content Include="Scripts\react\react.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\SampleTest.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -350,6 +358,10 @@
     <Content Include="Views\ReactJS\Index.cshtml" />
     <Content Include="Scripts\jsx\HelloWorld.jsx" />
     <Content Include="Views\ReactJS\CompoStyle.cshtml" />
+    <Content Include="Views\KO\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout_KO.cshtml" />
+    <Content Include="Views\ReactJS\State.cshtml" />
+    <Content Include="Views\NodeJS\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

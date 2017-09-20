@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout_KO.cshtml";
+}
+
+<style>
+    h2, p {
+        color: lightcoral;
+    }
+    .koboxes{
+        margin: 5px;
+        padding: 5px;
+        display: inline-block;
+        border: 2px solid #fff;
+        height:150px;
+        width: 350px;
+    }
+</style>
+
+<h2>Hello Knockout</h2>
+<table>
+    <tr>
+        <td class="koboxes">
+            <p>Enter your name: <input data-bind="value: yourName" /></p>
+            <p>Hi <strong data-bind="text: yourName"></strong> Good Morning!!!</p>
+        </td>
+        <td class="koboxes">
+            <p>Enter first number: <input class="bindable" data-bind="value: a" /></p>
+            <p>Enter second number: <input class="bindable" data-bind="value: b" /></p>
+            <p>Average := <span class="bindable" data-bind="text: totalAvg"></span></p>
+        </td>
+        @*<td class="koboxes">
+            <p>Today is : <span data-bind="text: whatDay"></span></p>
+            <p>Your name: <input data-bind="value: yourName, valueUpdate: 'afterkeydown'" /></p>
+            <p>Average := <span class="bindable" data-bind="text: totalAvg"></span></p>
+        </td>*@
+    </tr>
+</table>
+
+
+<script>
+    //ko.applyBindings(new AppViewModel());
+    ko.applyBindings(new MyViewModel());
+</script>
