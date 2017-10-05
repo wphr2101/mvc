@@ -7,6 +7,10 @@
       <Diagram DiagramId="a292bfc884f14cf084fa59a1896c1144" Name="Diagram1" >
         <EntityTypeShape EntityType="SampleDBModel.Employee" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="SampleDBModel.Product" Width="1.5" PointX="2.875" PointY="0.75" />
+        <EntityTypeShape EntityType="SampleDBModel.Department" Width="1.5" PointX="0.75" PointY="5.5" />
+        <EntityTypeShape EntityType="SampleDBModel.Login" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SampleDBModel.Project" Width="1.5" PointX="5.375" PointY="3.75" />
+        <EntityTypeShape EntityType="SampleDBModel.ProjToEmp" Width="1.5" PointX="3" PointY="3.375" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

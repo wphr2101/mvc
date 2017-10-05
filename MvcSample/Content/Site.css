@@ -54,3 +54,8 @@ textarea {
 .invalid {
     border-color: #FF0000;
 }
+
+input[type=text],
+input[type=button] {
+    margin:2px 5px;
+}

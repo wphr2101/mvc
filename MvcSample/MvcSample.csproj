@@ -225,6 +225,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CountryController.cs" />
+    <Compile Include="Controllers\DeptController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HelloController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -236,10 +237,22 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\Department.cs">
+      <DependentUpon>SampleDBEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Employee.cs">
       <DependentUpon>SampleDBEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Login.cs">
+      <DependentUpon>SampleDBEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Product.cs">
+      <DependentUpon>SampleDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Project.cs">
+      <DependentUpon>SampleDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProjToEmp.cs">
       <DependentUpon>SampleDBEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SampleDBEntities.Context.cs">
@@ -298,7 +311,7 @@
     <Content Include="Scripts\classes\vehicle.js" />
     <Content Include="Scripts\Employee\Controller.js" />
     <Content Include="Scripts\Employee\Module.js" />
-    <Content Include="Scripts\Employee\Service.js" />
+    <Content Include="Scripts\Service.js" />
     <Content Include="Scripts\injector.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -362,6 +375,7 @@
     <Content Include="Views\Shared\_Layout_KO.cshtml" />
     <Content Include="Views\ReactJS\State.cshtml" />
     <Content Include="Views\NodeJS\Index.cshtml" />
+    <Content Include="Views\Dept\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

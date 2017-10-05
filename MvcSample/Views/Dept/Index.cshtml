@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout_Emp.cshtml";
+}
+
+<div ng-controller="deptCntrl">
+    <h1>Department Details Page</h1>
+    <br />
+    <input type="button" class="btnAdd btn btn-default" value="Add Department" ng-click="AddDepartmentDiv()" />
+    <br />
+    <div class="divList">
+        <table cellpadding="4" class="table table-bordered table-hover">
+            <tr>
+                <td><b>ID</b></td>
+                <td><b>Name</b></td>
+            </tr>
+            <tr ng-repeat="department in departments">
+                <td>
+                    {{department.Id}}
+                </td>
+                <td>
+                    {{department.name}}
+                </td>
+                <td>
+                    <input type="button" ng-click="editDepartment(department)" class="btnAdd btn btn-default" value="Edit" />
+                    <input type="button" ng-click="deleteDepartment(department)" class="btnRed btn btn-default" value="Delete" />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div ng-show="divDepartment">
+        <p class="divHead">{{Action}} Department</p>
+        <table>
+            <tr>
+                <td><b>Id:</b></td>
+                <td>
+                    <input type="text" disabled="disabled" class="input-sm" ng-model="deptId" />
+                </td>
+            </tr>
+            <tr>
+                <td><b>Name:</b></td>
+                <td>
+                    <input type="text" id="deptName" class="input-sm" ng-model="deptName" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" id="submitBtn" class="btnAdd btn btn-default" value="Save" ng-click="AddUpdateDepartment()" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
