@@ -14,13 +14,14 @@
             <tr>
                 <td><b>ID</b></td>
                 <td><b>Name</b></td>
+                <td><b>Actions</b></td>
             </tr>
             <tr ng-repeat="department in departments">
                 <td>
                     {{department.Id}}
                 </td>
                 <td>
-                    {{department.name}}
+                    {{department.Name}}
                 </td>
                 <td>
                     <input type="button" ng-click="editDepartment(department)" class="btnAdd btn btn-default" value="Edit" />

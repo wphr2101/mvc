@@ -1,1 +1,1 @@
-﻿var app = angular.module('myApp', ['reusable']);
+﻿var app = angular.module('myApp', ['reusable','ngRoute']);

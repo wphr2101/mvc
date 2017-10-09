@@ -1,10 +1,10 @@
-﻿app.controller("empCntrl", "reusable", function ($scope, apiService) {
+﻿app.controller("empCntrl", function ($scope, apiService) {
     $scope.divEmployee = false;
     GetAllEmployee();
     //To Get All Records 
     function GetAllEmployee() {
         debugger;
-        var getData = apiService.getList("Employee/GetAll");
+        var getData = apiService.getList("Employee/getAllEmp");
         debugger;
         getData.then(function (emp) {
             $scope.employees = emp.data;
@@ -22,6 +22,10 @@
             $scope.employeeName = employee.name;
             $scope.employeeEmail = employee.email;
             $scope.employeeAge = employee.age;
+            $scope.employeeAddr = employee.address;
+            $scope.employeeCity = employee.city;
+            $scope.employeeState = employee.state;
+            $scope.employeeZip = employee.zip;
             $scope.Action = "Update";
             $scope.divEmployee = true;
         },
@@ -35,7 +39,11 @@
         var Employee = {
             Name: $scope.employeeName,
             Email: $scope.employeeEmail,
-            Age: $scope.employeeAge
+            Age: $scope.employeeAge,
+            address: $scope.employeeAddr,
+            city: $scope.employeeCity,
+            state: $scope.employeeState,
+            zip: $scope.employeeZip
         };
         var getAction = $scope.Action;
 
@@ -50,7 +58,6 @@
                 alert('Error in updating record');
             });
         } else {
-            //Employee.Id = $scope.latestId;
             var getData = apiService.AddItem("Employee/AddEmployee", Employee);
             getData.then(function (msg) {
                 GetAllEmployee();
@@ -85,13 +92,13 @@
         $scope.employeeAge = "";
     }
 });
-app.controller("deptCntrl", "reusable", function ($scope, apiService) {
+app.controller("deptCntrl", function ($scope, apiService) {
     $scope.divDepartment = false;
     GetAllDepartments();
     //To Get All Records 
     function GetAllDepartments() {
         debugger;
-        var getData = apiService.getList("Dept/GetAll");
+        var getData = apiService.getList("Dept/getAllDept");
         debugger;
         getData.then(function (emp) {
             $scope.departments = emp.data;
@@ -105,8 +112,8 @@ app.controller("deptCntrl", "reusable", function ($scope, apiService) {
         var getData = apiService.getItem("Dept/getDeptByNo", department.Id);
         getData.then(function (dept) {
             $scope.department = dept.data;
-            $scope.deptId = dept.Id;
-            $scope.deptName = dept.name;
+            $scope.deptId = department.Id;
+            $scope.deptName = department.Name;
             $scope.Action = "Update";
             $scope.divDepartment = true;
         },

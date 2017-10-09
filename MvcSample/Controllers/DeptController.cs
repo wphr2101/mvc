@@ -15,7 +15,7 @@ namespace MvcSample.Controllers
             return View();
         }
 
-        public JsonResult getAll()
+        public JsonResult getAllDept()
         {
             using (SampleDBEntities dataContext = new SampleDBEntities())
             {
@@ -24,17 +24,17 @@ namespace MvcSample.Controllers
             }
         }
 
-        public JsonResult getLatestId()
-        {
-            using (SampleDBEntities dataContext = new SampleDBEntities())
-            {
-                int id = 1;
-                if (dataContext.Departments.Count() > 0)
-                    id = dataContext.Departments.ToList().Last().Id;
-                return Json(id, JsonRequestBehavior.AllowGet); ;
-            }
+        //public JsonResult getLatestId()
+        //{
+        //    using (SampleDBEntities dataContext = new SampleDBEntities())
+        //    {
+        //        int id = 1;
+        //        if (dataContext.Departments.Count() > 0)
+        //            id = dataContext.Departments.ToList().Last().Id;
+        //        return Json(id, JsonRequestBehavior.AllowGet); ;
+        //    }
 
-        }
+        //}
         public JsonResult getDeptByNo(string DeptNo)
         {
             using (SampleDBEntities dataContext = new SampleDBEntities())

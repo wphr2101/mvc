@@ -57,4 +57,3 @@ C:\Users\richard\Documents\Visual Studio 2015\Projects\MvcSample\MvcSample\bin\r
 C:\Users\richard\Documents\Visual Studio 2015\Projects\MvcSample\MvcSample\bin\ru-ru\JavaScriptEngineSwitcher.Core.resources.dll
 C:\Users\richard\Documents\Visual Studio 2015\Projects\MvcSample\MvcSample\bin\ru-ru\JavaScriptEngineSwitcher.V8.resources.dll
 C:\Users\richard\Documents\Visual Studio 2015\Projects\MvcSample\MvcSample\bin\ru-ru\MsieJavaScriptEngine.resources.dll
-C:\Users\richard\Documents\Visual Studio 2015\Projects\MvcSample\MvcSample\obj\Debug\MvcSample.csprojResolveAssemblyReference.cache
