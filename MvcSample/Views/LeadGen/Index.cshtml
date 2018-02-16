@@ -1,0 +1,153 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Apply</h1>
+
+<section>
+    <div>
+        <div>            
+            <p>Start here to get funds in your business bank account within a day after final approval.</p>
+            <form>
+                <div>
+                    <div>
+                        <div>
+                            <label for="first-name">First Name</label>
+                            <div class="input-group">
+                                <input class="form-control" type="text" id="first-name" name="first_name" placeholder="Steve" required>
+                            </div>
+                            <div class="input-error">*Required field</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label for="last-name">Last Name</label>
+                            <div class="input-group">
+                                <input class="form-control" type="text" id="last-name" name="last_name" placeholder="Smith" required>
+                            </div>
+                            <div class="input-error">*Required field</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label for="business-name">Business Name</label>
+                            <div class="input-group">
+                                <input class="form-control" type="text" id="business-name" name="business_name" placeholder="Business Name, LLC" required>
+                            </div>
+                            <div class="input-error">*Required field</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label for="business-email">Email</label>
+                            <div class="input-group">
+                                <input data-validate="email" class="form-control" type="email" id="business-email" name="email" placeholder="name@example.com" required>
+                            </div>
+                            <div class="input-error">*Required field</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label for="business-phone">Phone Number</label>
+                            <div class="input-group">
+                                <input data-validate="tel" class="form-control format-phone" type="tel" id="business-phone" name="phone" placeholder="(123) 456-7890" required>
+                            </div>
+                            <div class="input-error">*Required field</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label for="time-in-business">Time in Business</label>
+                            <div class="input-group">
+                                <select name="time_in_business" id="time-in-business" class="form-control" required>
+                                    <option value="" selected disabled>Select</option>
+                                    <option value="0-2 months">0-2 months</option>
+                                    <option value="3-6 months">3-6 months</option>
+                                    <option value="7-18 months">7-18 months</option>
+                                    <option value="19-36 months">19-36 months</option>
+                                    <option value="36+ months">36+ months</option>
+                                </select>
+                            </div>
+                            <div class="input-error">*Required field</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label for="average-monthly-revenue">Average Monthly Revenue</label>
+                            <div class="input-group">
+                                <input data-validate="currency" class="form-control format-currency" type="text" id="average-monthly-revenue" name="average_monthly_revenue" placeholder="$200,000" required>
+                            </div>
+                            <div class="input-error">*Required field</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label for="industry">Industry</label>
+                            <div class="input-group">
+                                <select name="industry" id="industry" class="form-control" required>
+                                    <option value="" selected disabled>Select</option>
+                                    <option value="Agriculture">Agriculture</option>
+                                    <option value="Apparel">Apparel</option>
+                                    <option value="Automotive">Automotive</option>
+                                    <option value="Biotechnology">Biotechnology</option>
+                                    <option value="Business &amp; Commercial Services">Business &amp; Commercial Services</option>
+                                    <option value="Chemicals">Chemicals</option>
+                                    <option value="Childcare">Childcare</option>
+                                    <option value="Cleaning Services">Cleaning Services</option>
+                                    <option value="Communications">Communications</option>
+                                    <option value="Construction &amp; Contractors">Construction &amp; Contractors</option>
+                                    <option value="Consulting">Consulting</option>
+                                    <option value="Education">Education</option>
+                                    <option value="Electronics">Electronics</option>
+                                    <option value="Energy">Energy</option>
+                                    <option value="Engineering">Engineering</option>
+                                    <option value="Entertainment">Entertainment</option>
+                                    <option value="Environmental">Environmental</option>
+                                    <option value="Financial Services/Real Estate">Financial Services/Real Estate</option>
+                                    <option value="Food Service">Food Service</option>
+                                    <option value="Government">Government</option>
+                                    <option value="Healthcare">Healthcare</option>
+                                    <option value="Hospitality">Hospitality</option>
+                                    <option value="Insurance">Insurance</option>
+                                    <option value="Landscaping">Landscaping</option>
+                                    <option value="Machinery">Machinery</option>
+                                    <option value="Manufacturing &amp; Wholesale">Manufacturing &amp; Wholesale</option>
+                                    <option value="Media">Media</option>
+                                    <option value="Medical">Medical</option>
+                                    <option value="Not For Profit">Not For Profit</option>
+                                    <option value="Other">Other</option>
+                                    <option value="Personal Services">Personal Services</option>
+                                    <option value="Recreation">Recreation</option>
+                                    <option value="Retail">Retail</option>
+                                    <option value="Shipping">Shipping</option>
+                                    <option value="Technology">Technology</option>
+                                    <option value="Telecommunications">Telecommunications</option>
+                                    <option value="Transportation &amp; Logistics">Transportation &amp; Logistics</option>
+                                    <option value="Utilities">Utilities</option>
+                                </select>
+                            </div>
+                            <div class="input-error">*Required field</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="next-wrap">
+                            <button type="submit" class="btn btn-primary">Submit &rsaquo;</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="step-thanks">
+            <div class="thank-you-message">
+                <h1>Thank You!</h1>
+                <p>One of our representatives will reach out to you shortly.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/app.min.js?ver=1.1"></script>
