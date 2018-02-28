@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout_Emp.cshtml";
+}
+
+<div ng-controller="projCntrl">
+    <h1> Project Details Page</h1>
+    <br />
+    <input type="button" class="btnAdd btn btn-default" value="Add Project" ng-click="AddProjectDiv()" />
+    <br />
+    <div class="divList">
+        @*<p class="divHead">Employee List</p>*@
+        <table cellpadding="12" class="table table-bordered table-hover">
+            <tr>
+                <td><b>ID</b></td>
+                <td><b>Name</b></td>
+                <td><b>Description</b></td>
+                <td><b>Actions</b></td>
+            </tr>
+            <tr ng-repeat="project in projects">
+                <td>
+                    {{projects.Id}}
+                </td>
+                <td>
+                    {{projects.Name}}
+                </td>
+                <td>
+                    {{projects.Description}}
+                </td>                
+                <td>
+                    <input type="button" ng-click="editProject(project)" class="btnAdd btn btn-default" value="Edit" />
+                    <input type="button" ng-click="deleteProject(project)" class="btnRed btn btn-default" value="Delete" />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div ng-show="divProject">
+        <p class="divHead">{{Action}} Project</p>
+        <table>
+            <tr>
+                <td><b>Id:</b></td>
+                <td>
+                    <input type="text" disabled="disabled" class="input-sm" ng-model="projId" />
+                </td>
+                <td><b>Name:</b></td>
+                <td>
+                    <input type="text" id="projName" class="input-sm" ng-model="projName" />
+                </td>
+                <td><b>Description:</b></td>
+                <td>
+                    <textarea id="projDescr" class="input-group-lg" ng-model="projDescr"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6">
+                    <input type="button" id="submitBtn" class="btnAdd btn btn-default" value="Save" ng-click="AddUpdateProject()" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

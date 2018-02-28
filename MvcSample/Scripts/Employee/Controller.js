@@ -47,9 +47,9 @@
         };
         var getAction = $scope.Action;
 
-        if (getAction == "Update") {
+        if (getAction === "Update") {
             Employee.Id = $scope.employeeId;
-            var getData = apiService.updateItem("Employee/UpdateEmployee", Employee);
+            getData = apiService.updateItem("Employee/UpdateEmployee", Employee);
             getData.then(function (msg) {
                 GetAllEmployee();
                 alert(msg.data);
@@ -58,7 +58,7 @@
                 alert('Error in updating record');
             });
         } else {
-            var getData = apiService.AddItem("Employee/AddEmployee", Employee);
+            getData = apiService.AddItem("Employee/AddEmployee", Employee);
             getData.then(function (msg) {
                 GetAllEmployee();
                 alert(msg.data);
@@ -129,7 +129,7 @@ app.controller("deptCntrl", function ($scope, apiService) {
         };
         var getAction = $scope.Action;
 
-        if (getAction == "Update") {
+        if (getAction === "Update") {
             Department.Id = $scope.deptId;
             var getData = apiService.updateItem("Dept/UpdateDept", Department);
             getData.then(function (msg) {
@@ -141,7 +141,7 @@ app.controller("deptCntrl", function ($scope, apiService) {
             });
         } else {
             //Employee.Id = $scope.latestId;
-            var getData = apiService.AddItem("Dept/AddDept", Department);
+            getData = apiService.AddItem("Dept/AddDept", Department);
             getData.then(function (msg) {
                 GetAllDepartments();
                 alert(msg.data);
@@ -171,5 +171,88 @@ app.controller("deptCntrl", function ($scope, apiService) {
     function ClearFields() {
         $scope.deptId = "";
         $scope.deptName = "";
+    }
+});
+app.controller("projCntrl", function ($scope, apiService) {
+    $scope.divProject = false;
+    GetAllProjects();
+    //To Get All Records 
+    function GetAllProjects() {
+        debugger;
+        var getData = apiService.getList("Project/getAllProj");
+        debugger;
+        getData.then(function (proj) {
+            $scope.projects = proj.data;
+        }, function () {
+            alert('Error in getting records');
+        });
+    }
+
+    $scope.editProject = function (project) {
+        debugger;
+        var getData = apiService.getItem("Project/getProjByNo", project.Id);
+        getData.then(function (proj) {
+            $scope.project = proj.data;
+            $scope.projId = project.Id;
+            $scope.projName = project.Name;
+            $scope.projDescr = project.Description;
+            $scope.Action = "Update";
+            $scope.divProject = true;
+        },
+        function () {
+            alert('Error in getting records');
+        });
+    }
+
+    $scope.AddUpdateProject = function () {
+        debugger;
+        var Project = {
+            Name: $scope.projName,
+            Description: $scope.projDescr
+        };
+        var getAction = $scope.Action;
+        console.log(Project);
+        if (getAction === "Update") {
+            Project.Id = $scope.projId;
+            var getData = apiService.updateItem("Project/UpdateProj", Project);
+            getData.then(function (msg) {
+                GetAllProjects();
+                alert(msg.data);
+                $scope.divProject = false;
+            }, function () {
+                alert('Error in updating record');
+            });
+        } else {
+            getData = apiService.AddItem("Project/AddProj", Project);
+            getData.then(function (msg) {
+                GetAllProjects();
+                alert(msg.data);
+                $scope.divProject = false;
+            }, function () {
+                alert('Error in adding record');
+            });
+        }
+    }
+
+    $scope.AddProjectDiv = function () {
+        ClearFields();
+        $scope.Action = "Add";
+        $scope.divProject = true;
+    }
+
+    $scope.deleteProject = function (project) {
+        var getData = apiService.DeleteItem("Project/DeleteProj", project);
+        getData.then(function (msg) {
+            GetAllProjects();
+            alert(msg.data);
+        }, function () {
+            alert('Error in Deleting Record');
+        });
+    }
+
+    function ClearFields() {
+        $scope.projId = "";
+        $scope.projName = "";
+        $scope.projDescr = "";
     }
 });

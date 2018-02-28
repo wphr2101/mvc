@@ -1,8 +1,6 @@
 ﻿using MvcSample.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MvcSample.Controllers
@@ -24,17 +22,6 @@ namespace MvcSample.Controllers
             }
         }
 
-        //public JsonResult getLatestId()
-        //{
-        //    using (SampleDBEntities dataContext = new SampleDBEntities())
-        //    {
-        //        int id = 1;
-        //        if (dataContext.Departments.Count() > 0)
-        //            id = dataContext.Departments.ToList().Last().Id;
-        //        return Json(id, JsonRequestBehavior.AllowGet); ;
-        //    }
-
-        //}
         public JsonResult getDeptByNo(string DeptNo)
         {
             using (SampleDBEntities dataContext = new SampleDBEntities())

@@ -29,7 +29,7 @@ namespace MvcSample.Models
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Login> Logins { get; set; }
-        public DbSet<Project> Projects { get; set; }
+        public DbSet<Project> Project { get; set; }
         public DbSet<ProjToEmp> ProjToEmps { get; set; }
     }
 }
