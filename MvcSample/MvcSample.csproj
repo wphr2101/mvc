@@ -21,6 +21,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -230,6 +231,7 @@
     <Compile Include="Controllers\HelloController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KOController.cs" />
+    <Compile Include="Controllers\LeadGenController.cs" />
     <Compile Include="Controllers\NodeJSController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ReactJSController.cs" />
@@ -376,6 +378,7 @@
     <Content Include="Views\ReactJS\State.cshtml" />
     <Content Include="Views\NodeJS\Index.cshtml" />
     <Content Include="Views\Dept\Index.cshtml" />
+    <Content Include="Views\LeadGen\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
